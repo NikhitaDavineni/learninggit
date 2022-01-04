@@ -1,0 +1,21 @@
+SELECT WORKER_ID,FIRST_NAME,LAST_NAME,COUNT(*)OVER (PARTITION BY SALARY) AS SAMESAL
+FROM Worker_Details
+ORDER BY (SALARY);
+ 
+ 
+ 
+ 
+…1St QUERY DONE
+ 
+ 
+ 
+ 
+SELECT *
+FROM Worker_Details
+WHERE SALARY IN (SELECT MAX(SALARY) AS HIGHSAL
+                  FROM Worker_Details
+                                                                  GROUP BY(DEPARTMENT));
+
+
+
+……2Nd QUERY DONE 
